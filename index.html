@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For your friend name  ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="hearts"></div>
+
+<div class="card">
+    <h1>Happy your Day 💖</h1>
+
+    <p>
+        My Best Friend  ❤️<br><br>
+       लो बिना 7 फेरों के वचन देता हूँ 🤞💍  
+        तुम्हें हमेशा हँसाऊँगा 😊❤️  
+        तुम्हारे आँसू पोछूँगा 🥺💞  
+        और तुम्हारा कंधा बनूँगा 🤍🤝  
+        और हाँ… फिर कभी लगे कि मैं लायक नहीं हूँ 😔  
+        तो अपना लेना 😌💖
+        <h2>Tumhara Friend <h2>
+    </p>
+
+    <h2>your message</h2>
+
+    <button class="yes" onclick="showForm()">YES 💖</button>
+    <button class="no" onclick="alert('Soch lo dobara 😢')">NO 😢</button>
+
+    <div id="formBox">
+        <h3>Apne dil ki baat likho 💌</h3>
+        <form action="save.php" method="POST">
+            <textarea name="message" required placeholder="your friend name yahan likho..."></textarea>
+            <input type="hidden" name="answer" value="YES">
+            <br>
+            <button type="submit" class="submit">Send 💕</button>
+        </form>
+    </div>
+</div>
+
+<script>
+function showForm() {
+    document.getElementById("formBox").style.display = "block";
+}
+
+/* Hearts animation */
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+    document.querySelector(".hearts").appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+}
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
